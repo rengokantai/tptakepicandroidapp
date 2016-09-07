@@ -74,4 +74,26 @@ MainActivity.java
 private CameraManager cm;
 private CameraDevice cd;
 private CameraCaptureSession ccs;
+private Handler h;
+private int previewWidth =640;
+private int previewHeight =480;
+private String backCamera;
+
+//
+
+private void initCamera(){
+  cm = (CameraManager)getSystemService(CAMERA_SERVICE);
+  try{
+    String[] cameras = cm.getCameraIdList();
+    for(String c:cameras){
+      CameraCharacteristics ccc = cm.getCameraCharacteristics(c);
+      if(ccc.get(CameraCharacteristics.LENS_FACING)==CameraCharacteristics.LENS_FACING_BACK){
+        backCamera=c;
+        return;
+      }
+    }
+  }catch(CameraAccessException e){
+    e.printStackTrace();
+  }
+}
 ```
