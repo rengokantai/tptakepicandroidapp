@@ -47,3 +47,14 @@ public void onRequestPermissionsResult(int requestCode, @NonNull String[] permis
   }
 }
 ```
+#####2
+######1
+activity_main.xml
+```
+<TextureView
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:id="@+id/preview"
+  android:layout_centerInParent="true"
+  />
+```
