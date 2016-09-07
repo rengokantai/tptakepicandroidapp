@@ -57,4 +57,11 @@ activity_main.xml
   android:id="@+id/preview"
   android:layout_centerInParent="true"
   />
+<android.support.design.widget.FloatingActionButton
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:src="@drawable/ic_camera_alt_black_24dp"
+  android:tint="@android:color/white"
+  android:id="@+id/fab"
+  />
 ```
