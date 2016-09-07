@@ -69,3 +69,9 @@ activity_main.xml
   android:layout_marginBottom="@dimen/activity_vertical_margin"
   />
 ```
+MainActivity.java
+```
+private CameraManager cm;
+private CameraDevice cd;
+private CameraCaptureSession ccs;
+```
