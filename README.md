@@ -29,7 +29,7 @@ onCreate(BUndle savedInstanceState){
 private void request(){
   if(ContextCompat.checkSelfPermission(this,Mainfest.permission.CAMERA)==PackageManager.PERMISSION_GRANTED)&&
   ContextCompat.checkSelfPermission(this,Mainfest.permission.WRITE_EXTERNAL_STORAGE)==PackageManager.PERMISSION_GRANTED){
-    
+    initUI();
   } else{
     ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE},MY_CODE);
   }
@@ -40,7 +40,7 @@ public void onRequestPermissionsResult(int requestCode, @NonNull String[] permis
   super.onRequestPermissionsResult(requestCode,permissions, grantResults);
   if(requstCode == MY_CODE){
     if(grantResults[0]=PackageManager.PERMISSION_GRANTED && grantResults[1]=PackageManager.PERMISSION_GRANTED){
-      
+      initUI();
     }else{
       Toast.makeText(this,"",Toast.LENGTH_SHORT).show();
     }
@@ -63,5 +63,9 @@ activity_main.xml
   android:src="@drawable/ic_camera_alt_black_24dp"
   android:tint="@android:color/white"
   android:id="@+id/fab"
+  android:layout_alignParentBottom="true"
+  android:layout_alignParentRight="true"
+  android:layout_marginRight="@dimen/activity_horizontal_margin"
+  android:layout_marginBottom="@dimen/activity_vertical_margin"
   />
 ```
