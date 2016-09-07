@@ -96,4 +96,22 @@ private void initCamera(){
     e.printStackTrace();
   }
 }
+
+
+private void initPreview(){
+  try{
+    int orient = cm.getCameraCharacteristics(backCamera).get(CameraCharacteristics.SENSOR_ORIENTATION);]
+    preview.getLayoutParams().width = previewHeight;
+    preview.getLayoutParams().height = previewWidth;
+    preview.requestLayout();
+    
+    preview.setSurfaceTextureListener(new TextureView.SurfaceTextureListener(){
+      @Override
+      public void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture int i){
+        startPreview();
+      }
+    )}
+  }catch(CameraAccessException e){
+  }
+}
 ```
